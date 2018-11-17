@@ -1,0 +1,26 @@
+{
+	"holiday1": {
+		"name": "Christmas",
+		"Date": "12/25/2018",
+		"imageUrl": "https://localhop-prod.s3.amazonaws.com/uploads/b1471181f31bd06c6fdd6abd51a493d0_merry-christmas.jpg",
+		"location": "My house",
+		"startTime": "9am",
+		"uid": "12121"
+	},
+	"holiday2": {
+		"name": "Easter",
+		"Date": "4/21/2019",
+		"imageUrl": "https://s3.amazonaws.com/catholichealthservices.org/wp-content/uploads/easter.jpeg",
+		"location": "Moms house",
+		"startTime": "12pm",
+		"uid": "12312"
+	},
+	"holiday3": {
+		"name": "Independence Day",
+		"Date": "7/4/2019",
+		"imageUrl": "http://www.ymcastark.org/uploads/race-2018-flag-image.jpg",
+		"location": "The Earth",
+		"startTime": "9pm",
+		"uid": "12341"
+	}
+}
