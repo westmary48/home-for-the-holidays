@@ -1,0 +1,47 @@
+{
+	"friend1": {
+		"name": "Shannon West",
+		"address": "123 Friendship Way, Nashville, TN 37209",
+		"phoneNumber": "555-555-5555",
+		"email": "shannyboo@fmail.com",
+		"relationship": "sister",
+		"isAvoiding": true,
+		"uid": "11111"
+	},
+	"friend2": {
+		"name": "Colleen West",
+		"address": "2 Main Street, Nashville, TN 37209",
+		"phoneNumber": "555-555-5556",
+		"email": "colleenyweeny@fmail.com",
+		"relationship": "sister!",
+		"isAvoiding": false,
+		"uid": "22222"
+	},
+	"friend3": {
+		"name": "Lauren Watson",
+		"address": "3 Main Street, Nashville, TN 37209",
+		"phoneNumber": "3333333333",
+		"email": "lauren@fmail.com",
+		"relationship": "neighbor friend",
+		"isAvoiding": true,
+		"uid": "33333"
+	},
+	"friend4": {
+		"name": "Amy Person",
+		"address": "4 Main Street, Nashville, TN 37209",
+		"phoneNumber": "4444444444",
+		"email": "aperson@fmail.com",
+		"relationship": "spring break forevaaa",
+		"isAvoiding": false,
+		"uid": "44444"
+	},
+	"friend5": {
+		"name": "Meridith Hayes",
+		"address": "5 Main Street, Nashville, TN 37209",
+		"phoneNumber": "5555555555",
+		"email": "merbear@fmail.com",
+		"relationship": "soul sistas",
+		"isAvoiding": false,
+		"uid": "55555"
+	}
+}
