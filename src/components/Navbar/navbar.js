@@ -14,11 +14,11 @@ const navbarEvents = () => {
       }).catch((err) => {
         console.error('you still logged in', err);
       });
-    } else if (e.target.id === 'navbar-button-holidays') {
+    } else if (e.target.id === 'navbar-button-friends') {
       $('#auth').hide();
       $('#friends').show();
       $('#holidays').hide();
-    } else if (e.target.id === 'navbar-button-friends') {
+    } else if (e.target.id === 'navbar-button-holidays') {
       $('#auth').hide();
       $('#friends').hide();
       $('#holidays').show();
