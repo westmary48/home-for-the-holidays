@@ -24,6 +24,7 @@ const formBuilder = () => {
 <input type="text" class="form-control" id="form-friend-relationship" placeholder="I don't know">
 </div>
 `;
+  return form;
 };
 
 const gettingFriendFromForm = () => {
@@ -34,6 +35,9 @@ const gettingFriendFromForm = () => {
     phone: $('#form-friend-phone').val(),
     relationship: $('#form-friend-relationship').val(),
     isAvoiding: false,
-    uid: authHelpers.getCurrentUid()
+    uid: authHelpers.getCurrentUid(),
   };
+  console.log(friend);
 };
+
+export default { formBuilder, gettingFriendFromForm };
