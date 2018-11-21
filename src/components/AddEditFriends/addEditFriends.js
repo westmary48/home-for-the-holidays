@@ -19,7 +19,7 @@ const formBuilder = (friend) => {
 </div>
 <div class="form-group">
 <label for="form-friend-phone">Phone Number:</label>
-<input type="text" class="form-control" value ="${friend.phone}" id="form-friend-phone" placeholder="555-595-5555">
+<input type="text" class="form-control" value ="${friend.phoneNumber}" id="form-friend-phone" placeholder="555-595-5555">
 </div>
 <div class="form-group">
 <label for="form-friend-relationship">Relationship:</label>
@@ -60,7 +60,7 @@ const addNewFriend = () => {
   const newFriend = gettingFriendFromForm();
   friendsData.addNewFriend(newFriend)
     .then(() => {
-      $('add-edit-friend').html('').hide();
+      $('#add-edit-friend').html('').hide();
       $('#friends').show();
       initializeFriendsPage();
     })
@@ -89,8 +89,8 @@ const updateFriend = (e) => {
   const friendId = e.target.dataset.singleEditId;
   friendsData.updateFriend(updatedFriend, friendId)
     .then(() => {
-      $('add-edit-friend').html('').hide();
-      $('single-container').html('');
+      $('#add-edit-friend').html('').hide();
+      $('#single-container').html('');
       $('#friends').show();
       initializeFriendsPage();
     })
