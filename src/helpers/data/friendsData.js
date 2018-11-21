@@ -34,8 +34,14 @@ const getSingleFriend = friendId => new Promise((resolve, reject) => {
     });
 });
 
-const deleteFriend = (friendId) => {
-  console.log('friendId', friendId);
-};
+const deleteFriend = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
 
-export default { getAllFriends, getSingleFriend, deleteFriend };
+
+const addNewFriend = friendsObject => axios.post(`${firebaseUrl}/friends.json`, JSON.stringify(friendsObject));
+
+export default {
+  getAllFriends,
+  getSingleFriend,
+  deleteFriend,
+  addNewFriend,
+};
