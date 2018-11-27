@@ -1,8 +1,18 @@
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
 import friendsData from '../../helpers/data/friendsData';
+import holidayFriendsData from '../../helpers/data/holidayFriendsData';
+import holidaysData from '../../helpers/data/holidaysData';
 
-const printSingleFriend = (friend) => {
+
+const holidayStringBuilder = (holidays) => {
+  let holidayString = '<h3>Holidays:</h3>';
+  holidays.forEach((holiday) => {
+    holidayString += `<h5>${holiday.name} ${holiday.Date}</h5>`;
+  });
+  return holidayString;
+};
+const printSingleFriend = (friend, holidays) => {
   const friendString = `
   <div>
       <h1>${friend.name}</h1>
@@ -12,7 +22,7 @@ const printSingleFriend = (friend) => {
       <p>${friend.phoneNumber}</p>
       <button class = "btn btn-danger delete-btn" data-delete-id=${friend.id}>X</button> 
       <button class = "btn btn-info edit-btn" data-edit-id=${friend.id}>Edit</button>        
-       
+      <div class = "holiday-containter">${holidayStringBuilder(holidays)}</div> 
   </div>
     `;
   $('#single-container').html(friendString);
@@ -21,15 +31,19 @@ const printSingleFriend = (friend) => {
 
 const getSingleFriend = (e) => {
   const friendId = e.target.dataset.dropdownId;
-  friendsData.getSingleFriend(friendId)
-    .then((singleFriend) => {
-      printSingleFriend(singleFriend);
-    })
+  const uid = authHelpers.getCurrentUid();
+  friendsData.getSingleFriend(friendId).then((singleFriend) => {
+    holidayFriendsData.getHolidayIdsForFriend(friendId).then((holidayIds) => {
+      console.log('holidayIds', holidayIds);
+      holidaysData.getHolidaysByArrayOfIds(uid, holidayIds).then((holidays) => {
+        printSingleFriend(singleFriend, holidays);
+      });
+    });
+  })
     .catch((error) => {
       console.error('error in getting one friend', error);
     });
 };
-
 
 const buildDropDown = (friendsArray) => {
   let dropdown = `<div class="dropdown">
@@ -80,4 +94,5 @@ const initializeFriendsPage = () => {
   friendsPage();
   bindEvents();
 };
+
 export default initializeFriendsPage;
