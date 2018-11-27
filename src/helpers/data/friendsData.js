@@ -41,10 +41,13 @@ const addNewFriend = friendsObject => axios.post(`${firebaseUrl}/friends.json`, 
 
 const updateFriend = (friendsObject, friendId) => axios.put(`${firebaseUrl}/friends/${friendId}.json`, JSON.stringify(friendsObject));
 
+const updateIsAvoiding = (friendId, isAvoiding) => axios.patch(`${firebaseUrl}/friends/${friendId}.json`, { isAvoiding });
+
 export default {
   getAllFriends,
   getSingleFriend,
   deleteFriend,
   addNewFriend,
   updateFriend,
+  updateIsAvoiding,
 };
